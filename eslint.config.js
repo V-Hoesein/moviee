@@ -41,7 +41,7 @@ export default tseslint.config(
           usePrettierrc: true,
         },
       ],
-      'import/newline-after-import': ['error', { count: 2 }],
+      'import/newline-after-import': ['error', { count: 1 }],
     },
   }
 )
