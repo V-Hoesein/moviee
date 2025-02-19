@@ -6,6 +6,7 @@ import tseslint from 'typescript-eslint'
 import prettier from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
 import importNewlineAfter from 'eslint-plugin-import'
+import pluginQuery from '@tanstack/eslint-plugin-query'
 
 export default tseslint.config(
   {
@@ -16,6 +17,7 @@ export default tseslint.config(
       js.configs.recommended,
       ...tseslint.configs.recommended,
       prettierConfig,
+      ...pluginQuery.configs['flat/recommended'],
     ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
