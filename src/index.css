@@ -99,3 +99,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media (max-width: 576px) {
+  ::-webkit-scrollbar {
+    height: 0px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #141414;
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    height: 5px;
+  }
+}
