@@ -7,6 +7,7 @@ const Header = () => {
   const { data: genres, isFetching } = useQuery({
     queryKey: ['genres'],
     queryFn: getGenres,
+    refetchOnWindowFocus: false,
   })
 
   return (
