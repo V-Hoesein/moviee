@@ -1,18 +1,28 @@
 import { useRouterState } from '@tanstack/react-router'
-import { Input } from './ui/input'
 import { Search } from 'lucide-react'
 
-const SearchForm = () => {
+export interface SearchFormProps {
+  searchQuery: string
+  setSearchQuery: React.Dispatch<React.SetStateAction<string>>
+}
+
+const SearchForm = ({ searchQuery, setSearchQuery }: SearchFormProps) => {
   const { location } = useRouterState()
+
+  const searchHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchQuery(event.target.value)
+  }
 
   if (location.pathname === '/search') {
     return (
-      <div className='flex flex-1 items-center gap-x-2 border border-zinc-800 rounded-full px-2'>
+      <div className='flex flex-1 items-center gap-x-2 border border-zinc-800 rounded-full px-5 py-3'>
         <Search className='text-gray-400' />
-        <Input
+        <input
           className='w-full bg-transparent border-none outline-none ring-0 focus:ring-0 focus:outline-none focus:border-transparent placeholder:text-gray-400'
           placeholder='Search'
           type='search'
+          onChange={searchHandler}
+          value={searchQuery}
         />
       </div>
     )
