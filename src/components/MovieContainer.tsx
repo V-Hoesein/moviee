@@ -1,6 +1,7 @@
 import CardMovie from './CardMovie'
 import SkeletonLoader from './SkeletonLoader'
 import { MovieContainerProps } from '@/types/movie'
+import { motion } from 'framer-motion'
 
 const MovieContainer = ({ data, isFetching }: MovieContainerProps) => {
   if (isFetching && !!data)
@@ -19,7 +20,12 @@ const MovieContainer = ({ data, isFetching }: MovieContainerProps) => {
   }
 
   return (
-    <div className='flex flex-col gap-3 mt-4'>
+    <motion.div
+      className='flex flex-col gap-3 mt-4'
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
+    >
       <div className='flex gap-3 overflow-x-auto'>
         {data.map((item) => (
           <CardMovie
@@ -29,7 +35,7 @@ const MovieContainer = ({ data, isFetching }: MovieContainerProps) => {
           />
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
