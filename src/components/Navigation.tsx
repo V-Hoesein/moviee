@@ -1,55 +1,29 @@
 import { PAGES } from '@/constans/pages'
 import { Button } from './ui/button'
-import { Link, useNavigate, useRouterState } from '@tanstack/react-router'
-import { ArrowLeft, Search } from 'lucide-react'
+import { Link, useRouterState } from '@tanstack/react-router'
 
 const Navigation = () => {
   const { location } = useRouterState()
-  const navigate = useNavigate()
 
-  if (location.pathname === '/search') {
-    return (
-      <Button
-        className='rounded-full'
-        variant='outline'
-        onClick={() => navigate({ to: '/' })}
-        size='icon'
-      >
-        <ArrowLeft />
-      </Button>
-    )
-  }
   return (
     <nav className='flex w-full gap-x-2'>
-      {PAGES.map((page) =>
-        page.name === 'search' ? (
-          <Button
+      {PAGES.map((page) => (
+        <Button
+          key={page.name}
+          asChild
+          variant={`${location.pathname === page.path ? 'default' : 'outline'}`}
+          size='sm'
+          className='rounded-full'
+        >
+          <Link
             key={page.name}
-            className='rounded-full ml-auto'
-            variant='outline'
-            size='icon'
-            onClick={() => navigate({ to: '/search' })}
+            to={page.path}
+            className='flex justify-between items-center'
           >
-            <Search />
-          </Button>
-        ) : (
-          <Button
-            key={page.name}
-            asChild
-            variant={`${location.pathname === page.path ? 'default' : 'outline'}`}
-            size='sm'
-            className='rounded-full'
-          >
-            <Link
-              key={page.name}
-              to={page.path}
-              className='flex justify-between items-center'
-            >
-              <span className='capitalize'>{page.name}</span>
-            </Link>
-          </Button>
-        )
-      )}
+            <span className='capitalize'>{page.name}</span>
+          </Link>
+        </Button>
+      ))}
     </nav>
   )
 }
