@@ -34,6 +34,7 @@ const Navigation = () => {
           </Button>
         ) : (
           <Button
+            key={page.name}
             asChild
             variant={`${location.pathname === page.path ? 'default' : 'outline'}`}
             size='sm'
