@@ -1,17 +1,16 @@
+import { WavyBackground } from './ui/wavy-background'
+
 const HeroSection = () => {
   return (
-    <div
-      id='hero'
-      className={`h-[calc(100vh-20%)] bg-zinc-900 flex flex-col
-        justify-center items-center
-        bg-background-hero bg-cover bg-center bg-no-repeat
-        bg-fixed bg-[url(/public/bg.jpeg)]
-        text-white brightness-50`}
-    >
-      <h1 className='text-4xl font-semibold'>Welcome to Movie App</h1>
-      <p className='mt-2 text-gray-300 '>
-        Find your favorite movie and watch it now
-      </p>
+    <div id='hero' className={`h-[calc(100vh-20%)]`}>
+      <WavyBackground className='max-w-4xl mx-auto pb-40' speed='slow'>
+        <p className='text-2xl md:text-4xl lg:text-7xl text-white font-bold inter-var text-center'>
+          Welcome to movie app
+        </p>
+        <p className='text-lg md:text-lg mt-4 text-white font-normal inter-var text-center'>
+          Find your favorite movie and watch it now
+        </p>
+      </WavyBackground>
     </div>
   )
 }
