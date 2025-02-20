@@ -1,5 +1,5 @@
 import ContentSection from '@/components/ContentSection'
-import { MovieContainer } from '@/components/MovieContainer'
+import MovieContainer from '@/components/MovieContainer'
 import { Button } from '@/components/ui/button'
 import { getListContent } from '@/services/api'
 import { GetListResponse } from '@/types/globals'

@@ -1,5 +1,5 @@
 import ContentSection from '@/components/ContentSection'
-import { MovieContainer } from '@/components/MovieContainer'
+import MovieContainer from '@/components/MovieContainer'
 import { getTrendings } from '@/services/api'
 import { useQuery } from '@tanstack/react-query'
 
@@ -16,7 +16,6 @@ const Trendings = () => {
         <MovieContainer
           data={trendings.data.results}
           isFetching={trendings.isFetching}
-          loadMore
         />
       </ContentSection>
     </>
