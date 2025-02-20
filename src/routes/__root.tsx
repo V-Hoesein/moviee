@@ -5,7 +5,6 @@ import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { Outlet } from '@tanstack/react-router'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import Header from '@/components/fragments/Header'
-import Footer from '@/components/fragments/Footer'
 
 const queryClient = new QueryClient()
 
@@ -15,7 +14,6 @@ const RootComponent = () => (
       <QueryClientProvider client={queryClient}>
         <Header />
         <Outlet />
-        <Footer />
         <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </ThemeProvider>
