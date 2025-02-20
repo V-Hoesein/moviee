@@ -11,4 +11,8 @@ export const PAGES = [
     path: '/tv',
     name: 'tv',
   },
+  {
+    path: '/search',
+    name: 'search',
+  },
 ]

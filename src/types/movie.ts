@@ -1,18 +1,31 @@
+import { GetListResponse } from '@/types/globals'
 import { MovieProps } from './globals'
 
-type GetTrendingsProps = {
+interface GetTrendingsProps {
   type: 'all' | 'movie' | 'tv'
   category: 'day' | 'week'
 }
 
-type MovieContainerProps = {
+interface MovieContainerProps {
   data: MovieProps[]
   isFetching: boolean
 }
 
-type GetPopularMoviesProps = {
+interface GetPopularMoviesProps {
   language: string
   page: number
 }
 
-export type { GetTrendingsProps, MovieContainerProps, GetPopularMoviesProps }
+interface GetNowPlayingMoviesResponse extends GetListResponse {
+  dates?: {
+    maximum: string
+    minimum: string
+  }
+}
+
+export type {
+  GetTrendingsProps,
+  MovieContainerProps,
+  GetPopularMoviesProps,
+  GetNowPlayingMoviesResponse,
+}
