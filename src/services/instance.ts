@@ -1,14 +1,16 @@
 import axios from 'axios'
 
-if (!import.meta.env.VITE_BASE_API_URL) {
-  throw new Error('VITE_API_URL is not defined')
+if (!import.meta.env.VITE_TMDB_ACCESS_TOKEN) {
+  throw new Error('VITE_TMDB_ACCESS_TOKEN is not defined')
 }
 
 const instance = axios.create({
-  baseURL: import.meta.env.VITE_BASE_API_URL,
+  // baseURL: import.meta.env.VITE_BASE_API_URL,
+  baseURL: import.meta.env.VITE_TMDB_BASE_API_URL,
   headers: {
     'Content-Type': 'application/json',
-    'x-rapidapi-key': import.meta.env.VITE_RAPID_API_KEY,
+    // 'x-rapidapi-key': import.meta.env.VITE_RAPID_API_KEY,
+    Authorization: `Bearer ${import.meta.env.VITE_TMDB_ACCESS_TOKEN}`,
   },
   timeout: 10000,
 })
