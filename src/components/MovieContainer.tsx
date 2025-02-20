@@ -2,8 +2,8 @@ import CardMovie from './CardMovie'
 import SkeletonLoader from './SkeletonLoader'
 import { MovieContainerProps } from '@/types/movie'
 
-export const MovieContainer = ({ data, isFetching }: MovieContainerProps) => {
-  if (isFetching)
+const MovieContainer = ({ data, isFetching }: MovieContainerProps) => {
+  if (isFetching && !!data)
     return (
       <div className='flex gap-3 mt-4'>
         <SkeletonLoader />
@@ -32,3 +32,5 @@ export const MovieContainer = ({ data, isFetching }: MovieContainerProps) => {
     </div>
   )
 }
+
+export default MovieContainer
