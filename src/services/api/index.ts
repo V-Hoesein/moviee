@@ -1,7 +1,6 @@
 import instance from '@/services/instance'
-import { GetListResponse } from '@/types/globals'
-import { GetPopularMoviesProps, GetTrendingsProps } from '@/types/movie'
-import { GetTvPopularProps } from '@/types/tv'
+import { GetContentProps, GetListResponse } from '@/types/globals'
+import { GetNowPlayingMoviesResponse, GetTrendingsProps } from '@/types/movie'
 
 const getTrendings = async ({
   type = 'all',
@@ -9,16 +8,12 @@ const getTrendings = async ({
 }: GetTrendingsProps): Promise<GetListResponse> =>
   await instance.get(`/trending/${type}/${category}?language=en-US`)
 
-const getPopularMovie = async ({
-  language,
+const getListContent = async ({
   page = 1,
-}: GetPopularMoviesProps): Promise<GetListResponse> =>
-  await instance.get(`/movie/popular?language=${language}&page=${page}`)
-
-const getPopularTv = async ({
+  languange = 'en-US',
   type,
-  page = 1,
-}: GetTvPopularProps): Promise<GetListResponse> =>
-  await instance.get(`/tv/${type}?language=en-US&page=${page}`)
+  category,
+}: GetContentProps): Promise<GetListResponse | GetNowPlayingMoviesResponse> =>
+  await instance.get(`/${type}/${category}?language=${languange}&page=${page}`)
 
-export { getTrendings, getPopularTv, getPopularMovie }
+export { getTrendings, getListContent }
