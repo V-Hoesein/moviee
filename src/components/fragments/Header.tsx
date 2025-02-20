@@ -4,9 +4,9 @@ import Navigation from '../Navigation'
 const Header = () => {
   return (
     <div
-      className='fixed top-0 left-0 right-0 z-10 bg-gradient-to-b
+      className='fixed top-0 left-0 right-0 z-50 bg-gradient-to-b
          from-zinc-950 via-zinc-950/70 to-zinc-950/20 shadow-sm
-          backdrop-blur-xs p-5 sm:p-10 w-full'
+          backdrop-blur-md p-5 sm:p-10 w-full'
     >
       <header className='mx-auto md:max-w-5xl space-y-5'>
         <div className='flex justify-between items-center'>

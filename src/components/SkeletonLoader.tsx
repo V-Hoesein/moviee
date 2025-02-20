@@ -12,7 +12,7 @@ const SkeletonLoader = ({
     {[...Array(count)].map((_, i) => (
       <Skeleton
         key={i}
-        className={`${cn('h-52 w-2/6 min-w-[150px] rounded-md', className)}`}
+        className={`${cn('h-52 sm:h-64 md:h-72 min-w-[150px] sm:min-w-[170px] md:min-w-[200px] rounded-md', className)}`}
       />
     ))}
   </>

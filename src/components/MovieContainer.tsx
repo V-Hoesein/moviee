@@ -6,7 +6,7 @@ const MovieContainer = ({ data, isFetching }: MovieContainerProps) => {
   if (isFetching && !!data)
     return (
       <div className='flex gap-3 mt-4'>
-        <SkeletonLoader />
+        <SkeletonLoader count={10} />
       </div>
     )
 

@@ -5,7 +5,7 @@ interface CardMovieProps {
   title?: string
 }
 const CardMovie = ({ poster_path, title }: CardMovieProps) => (
-  <Card className='h-52 w-2/6 min-w-[150px] rounded-md'>
+  <Card className='h-52 sm:h-64 md:h-72 min-w-[150px] sm:min-w-[170px] md:min-w-[200px] rounded-md'>
     <CardContent
       className='h-full bg-cover bg-center rounded-md flex items-end p-2'
       style={{
