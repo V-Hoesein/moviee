@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <>
       {/* mobile */}
-      <header className='fixed top-0 left-0 right-0 z-50 bg-zinc-950'>
+      <header className='fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-zinc-950 via-zinc-950/70 to-zinc-950/20 shadow-sm backdrop-blur-xs'>
         <div className='flex justify-between items-center p-4'>
           <h1 className='capitalize font-bold text-2xl'>moviee</h1>
           <Avatar>
