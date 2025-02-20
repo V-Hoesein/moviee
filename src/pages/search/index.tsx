@@ -9,6 +9,7 @@ import { GetListResponse } from '@/types/globals'
 import { Button } from '@/components/ui/button'
 import { MoveLeft, MoveRight } from 'lucide-react'
 import { SearchMovieProps } from '@/types/movie'
+import { motion } from 'framer-motion'
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState<string>('')
@@ -48,11 +49,17 @@ const Search = () => {
 
   return (
     <main className='bg-zinc-900 pt-[150px] h-full px-5'>
-      <SearchForm
-        className='mx-auto md:max-w-5xl'
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-      />
+      <motion.div
+        initial={{ scale: 0.8, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+      >
+        <SearchForm
+          className='mx-auto md:max-w-5xl'
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+        />
+      </motion.div>
 
       {!!value && (
         <ContentSection
