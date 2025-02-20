@@ -66,23 +66,24 @@ const Search = () => {
                 </Button>
               </div>
             )}
+
+            <MovieContainer
+              data={searchResults.results}
+              isFetching={isFetching}
+            />
+            {page < searchResults.total_pages && (
+              <div className='px-4'>
+                <Button
+                  className='rounded-full'
+                  variant='outline'
+                  size='icon'
+                  onClick={handleNext}
+                >
+                  <MoveRight />
+                </Button>
+              </div>
+            )}
           </div>
-          <MovieContainer
-            data={searchResults.results}
-            isFetching={isFetching}
-          />
-          {page < searchResults.total_pages && (
-            <div className='px-4'>
-              <Button
-                className='rounded-full'
-                variant='outline'
-                size='icon'
-                onClick={handleNext}
-              >
-                <MoveRight />
-              </Button>
-            </div>
-          )}
         </ContentSection>
       )}
     </main>
