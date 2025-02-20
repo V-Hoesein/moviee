@@ -48,10 +48,17 @@ const Search = () => {
 
   return (
     <main className='bg-zinc-900 pt-[150px] h-full px-5'>
-      <SearchForm searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <SearchForm
+        className='mx-auto md:max-w-5xl'
+        searchQuery={searchQuery}
+        setSearchQuery={setSearchQuery}
+      />
 
       {!!value && (
-        <ContentSection sectionName='results' className='mt-5'>
+        <ContentSection
+          sectionName='results'
+          className='mt-5 mx-auto md:max-w-5xl'
+        >
           <div className='flex overflow-x-auto items-center'>
             {page > 1 && (
               <div className='px-4'>
