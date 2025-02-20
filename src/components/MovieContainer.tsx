@@ -3,7 +3,12 @@ import SkeletonLoader from './SkeletonLoader'
 import { MovieContainerProps } from '@/types/movie'
 
 export const MovieContainer = ({ data, isFetching }: MovieContainerProps) => {
-  if (isFetching) return <SkeletonLoader />
+  if (isFetching)
+    return (
+      <div className='flex gap-3 mt-4'>
+        <SkeletonLoader />
+      </div>
+    )
 
   if (!data.length) {
     return (
