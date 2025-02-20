@@ -54,8 +54,6 @@ const PopularMovie = () => {
     }
   }
 
-  console.log(data)
-
   return (
     <ContentSection sectionName='Popular Movies'>
       <div className='flex overflow-x-auto items-center'>
