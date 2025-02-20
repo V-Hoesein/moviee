@@ -1,12 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar'
-import { useNavigate } from '@tanstack/react-router'
-import { Button } from '../ui/button'
-import { Search } from 'lucide-react'
 import Navigation from '../Navigation'
+import SearchForm from '../SearchForm'
 
 const Header = () => {
-  const navigate = useNavigate()
-
   return (
     <>
       {/* mobile */}
@@ -18,16 +14,9 @@ const Header = () => {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         </div>
-        <div className='flex justify-between items-center px-5 pb-2'>
+        <div className='flex justify-between items-center px-5 pb-2 gap-3'>
           <Navigation />
-          <Button
-            className='rounded-full'
-            variant='outline'
-            size='icon'
-            onClick={() => navigate({ to: '/search' })}
-          >
-            <Search />
-          </Button>
+          <SearchForm />
         </div>
       </header>
     </>
