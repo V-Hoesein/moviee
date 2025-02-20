@@ -1,5 +1,5 @@
-const Movie = () => {
-  return <main className='h-full px-5'>Movie</main>
-}
+import Underconstruction from '@/components/Underconstruction'
+
+const Movie = () => <Underconstruction />
 
 export default Movie

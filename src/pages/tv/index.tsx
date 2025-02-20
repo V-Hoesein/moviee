@@ -1,5 +1,5 @@
-const Tv = () => {
-  return <main className='h-full px-5'>Tv</main>
-}
+import Underconstruction from '@/components/Underconstruction'
+
+const Tv = () => <Underconstruction />
 
 export default Tv
