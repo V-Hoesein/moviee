@@ -24,6 +24,7 @@ const Navigation = () => {
       {PAGES.map((page) =>
         page.name === 'search' ? (
           <Button
+            key={page.name}
             className='rounded-full ml-auto'
             variant='outline'
             size='icon'
