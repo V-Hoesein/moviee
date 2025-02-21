@@ -6,15 +6,16 @@ import {
   SearchMovieProps,
 } from '@/types/movie'
 
-/* eslint-disable */
-const buildQuery = (params) => {
+const buildQuery = (
+  params: Record<string, string | number | boolean | undefined | null>
+): string => {
   return Object.entries(params)
     .filter(
-      ([_, value]) => value !== '' && value !== undefined && value !== null
+      ([, value]) => value !== '' && value !== undefined && value !== null
     )
     .map(
       ([key, value]) =>
-        `${encodeURIComponent(key)}=${encodeURIComponent(value)}`
+        `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`
     )
     .join('&')
 }
@@ -27,11 +28,11 @@ const getTrendings = async ({
 
 const getListContent = async ({
   page = 1,
-  languange = 'en-US',
+  language = 'en-US',
   type,
   category,
 }: GetContentProps): Promise<GetListResponse | GetNowPlayingMoviesResponse> =>
-  await instance.get(`/${type}/${category}?language=${languange}&page=${page}`)
+  await instance.get(`/${type}/${category}?language=${language}&page=${page}`)
 
 const searchMovie = async ({
   query,

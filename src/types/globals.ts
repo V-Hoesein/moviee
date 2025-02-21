@@ -15,7 +15,7 @@ interface GetListResponse {
 interface GetContentProps {
   type: 'movie' | 'tv'
   category?: string
-  languange?: string
+  language?: string
   page?: number
 }
 
